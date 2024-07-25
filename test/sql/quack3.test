@@ -1,0 +1,23 @@
+# name: test/sql/quack3.test
+# description: test quack3 extension
+# group: [quack3]
+
+# Before we load the extension, this will fail
+statement error
+SELECT quack3('Sam');
+----
+Catalog Error: Scalar Function with name quack3 does not exist!
+
+# Require statement will ensure this test is run with this extension loaded
+require quack3
+
+# Confirm the extension works
+query I
+SELECT quack3('Sam');
+----
+Quack333 Sam 🐥
+
+query I
+SELECT quack3_openssl_version('Michael');
+----
+<REGEX>:Quack333 Michael, my linked OpenSSL version is OpenSSL.*
