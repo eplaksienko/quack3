@@ -15,9 +15,9 @@ require quack3
 query I
 SELECT quack3('Sam');
 ----
-Quack333 Sam 🐥
+Quack3 Sam 🐥
 
 query I
 SELECT quack3_openssl_version('Michael');
 ----
-<REGEX>:Quack333 Michael, my linked OpenSSL version is OpenSSL.*
+<REGEX>:Quack3 Michael, my linked OpenSSL version is OpenSSL.*
